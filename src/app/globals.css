@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #020617;
+  --foreground: #e2e8f0;
+  --muted: #94a3b8;
+  --accent: #34d399;
 }
 
 @theme inline {
@@ -12,15 +14,63 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply min-h-screen bg-slate-950 text-slate-50 antialiased;
+    background: radial-gradient(circle at 20% 20%, #0f172a, transparent 35%),
+      radial-gradient(circle at 80% 0%, #0b2f2f, transparent 40%),
+      linear-gradient(180deg, #020617 0%, #020617 60%, #0b1224 100%);
+  }
+
+  ::selection {
+    background-color: #34d39933;
+    color: #ecfeff;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .card {
+    @apply rounded-3xl border border-white/5 bg-white/5 p-6 shadow-[0_20px_60px_-35px_rgba(0,0,0,0.75)] backdrop-blur;
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-emerald-200;
+  }
+
+  .section-title {
+    @apply text-2xl font-semibold tracking-tight text-white;
+  }
+}
+
+@layer utilities {
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.7s ease-out both;
+  }
+
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
 }
