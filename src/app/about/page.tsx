@@ -7,7 +7,7 @@ export const metadata = {
 
 const milestones = [
   {
-    title: "Undergraduate BCA Student",
+    title: "Undergraduate CS Student",
     detail: "Built multiple projects while learning full-stack patterns hands-on.",
   },
   {

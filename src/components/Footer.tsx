@@ -20,7 +20,7 @@ export function Footer() {
           >
             GitHub
           </a>
-          <a href="mailto:hello@portfolio.dev" className="transition hover:text-white">
+          <a href="mailto:bishnoinikhil35@gmail.com" className="transition hover:text-white">
             Email
           </a>
         </div>

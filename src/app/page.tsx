@@ -145,7 +145,7 @@ export default function Home() {
               Contact me
             </Link>
             <a
-              href="mailto:hello@portfolio.dev"
+              href="mailto:bishnoinikhil35@gmail.com"
               className="rounded-full border border-white/15 px-4 py-2 text-sm font-semibold text-white transition hover:border-emerald-400/60 hover:text-emerald-100"
             >
               Email directly
